@@ -1,4 +1,5 @@
 import Clock from "./clock/Clock";
+import Footer from "./footer/Footer";
 import Msg1 from "./msg/Msg";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
       <Msg1 />
       <resim />
       <Clock />
+      <Footer />
     </div>
   );
 }
