@@ -1,10 +1,12 @@
-import Msg from "./msg/Msg";
+import Clock from "./clock/Clock";
+import Msg1 from "./msg/Msg";
 
 function App() {
   return (
     <div className="App">
-      <Msg />
-      <Msg />
+      <Msg1 />
+      <resim />
+      <Clock />
     </div>
   );
 }
