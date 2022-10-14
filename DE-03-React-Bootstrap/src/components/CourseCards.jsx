@@ -5,21 +5,23 @@ const CourseCards = ({ data1 }) => {
   console.log("a", data1[0].name); //Bu sekilde verilere ulasacagiz
   return (
     <div>
-      <h2>Course Cards </h2>
-      <Container>
-        <Row>
+      <Container className=" mt-5 p-3">
+        <Row className="g-1 d-flex justify-content-center">
           {data1.map((e) => {
+            const { name, text, img } = e;
             return (
-              <Col>
+              <Col
+                sm={12}
+                md={6}
+                lg={4}
+                className="d-flex justify-content-center"
+              >
                 <Card style={{ width: "18rem" }}>
-                  <Card.Img variant="top" src="holder.js/100px180" />
+                  <Card.Img variant="top" src={img} />
                   <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Card.Title>{name}</Card.Title>
+                    <Card.Text>{text}</Card.Text>
+                    <Button variant="primary">Detaylar</Button>
                   </Card.Body>
                 </Card>
               </Col>
