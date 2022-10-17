@@ -1,5 +1,6 @@
 import React from "react";
 import "./Card.scss";
+
 //keyword olarak verdigim kelimeyi dalgali parantez icinde yazmaliyim. Eger direk liste halinde almak istiyorsam. Diger türlü props olarak da alabilirim ama fafrki console.log icinde yazdirarak görebilrisiniz.
 const Mycard = ({ data1 }) => {
   console.log(data1);
@@ -17,7 +18,7 @@ const Mycard = ({ data1 }) => {
 
               <div className="btn-container">
                 <button className="btn-container-small">Small</button>
-                <button className="btn.container--large">Large</button>
+                <button className="btn-container--large">Large</button>
               </div>
             </div>
           );

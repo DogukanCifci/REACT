@@ -1,0 +1,17 @@
+@import "../../scss/variables";
+footer {
+  background-color: $blue;
+  text-align: center;
+  margin-top: 20px;
+  padding: 30px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  //veya direk width=100% de verebilirdik
+  //Eger bottom left right vermezsek footer gözükmez.
+  //Sadece left veya right veya bottom verirsek boyutu kadar gözükür.Onun icin sagdan soldan asagidan asildik ve boyutu uzattik
+  p {
+    color: $gray;
+  }
+}

@@ -1,0 +1,17 @@
+.btn-container {
+  button {
+    color: $koyu-yesil;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  &-small {
+    background-color: $blue3;
+    margin-right: 10px;
+  }
+  &--large {
+    background-color: $blue2;
+  }
+}
