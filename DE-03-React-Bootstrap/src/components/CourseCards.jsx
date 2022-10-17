@@ -7,10 +7,11 @@ const CourseCards = ({ data1 }) => {
     <div>
       <Container className=" mt-5 p-3">
         <Row className="g-1 d-flex justify-content-center">
-          {data1.map((e) => {
+          {data1.map((e, index) => {
             const { name, text, img } = e;
             return (
               <Col
+                key={index}
                 sm={12}
                 md={6}
                 lg={4}
