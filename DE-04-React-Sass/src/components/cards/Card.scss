@@ -1,6 +1,18 @@
 @import "../../scss/variables";
-
-img {
-  width: 200px;
-  height: 200px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  .cards {
+    text-align: center;
+    width: 30%;
+    box-shadow: 5px 5px 10px 5px rgba(11, 11, 11, 0.613);
+    border-radius: 10px;
+    img {
+      width: 60%;
+      border-radius: 60px;
+      margin-top: 10px;
+    }
+  }
 }
