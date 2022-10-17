@@ -1,9 +1,10 @@
 import "./App.scss";
+import Myheader from "./components/header/Myheader";
+
 function App() {
   return (
     <div>
-      <h1>Hello</h1>
-      <h2>Merhaba</h2>
+      <Myheader />
     </div>
   );
 }
