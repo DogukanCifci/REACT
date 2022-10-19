@@ -26,7 +26,19 @@ const Hooks = () => {
   };
 
   const changing = () => {
-    setInfos({ isim: "Muhammed", email: "Muhammed@gmail.com", age: 29 });
+    if (infos.isim === "Mevlut") {
+      setInfos({
+        isim: "Muhammed",
+        email: "Muhammed@gmail.com",
+        age: 29,
+      });
+    } else {
+      setInfos({
+        isim: "Mevlut",
+        email: "Mevlüt@gmail.com",
+        age: 26,
+      });
+    }
   };
   return (
     <div>

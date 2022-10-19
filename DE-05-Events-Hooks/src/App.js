@@ -1,11 +1,13 @@
-import Events from "./1-events-hooks-intro/Events";
+//import Events from "./1-events-hooks-intro/Events";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Hooks from "./2-hooks/Hooks";
+// import Hooks from "./2-hooks/Hooks";
+import Counter from "./3-classComponents/Counter";
 function App() {
   return (
     <div>
-      <Events />
-      <Hooks />
+      {/* <Events />
+      <Hooks /> */}
+      <Counter />
     </div>
   );
 }
