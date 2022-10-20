@@ -4,12 +4,17 @@ const Form1 = () => {
   const [password, setPassword] = useState("");
   const [country, setCountry] = useState("");
   console.log(password);
+
+  const formGet = () => {
+    alert(`Username :${ad}
+    Password : ${password}
+    Country : ${country}`);
+  };
   return (
     <div className="container-fluid">
       <h1>******************************************</h1>
       <h2 className="text-center">FORMS(EVENTS)</h2>
-      <form action="">
-        {" "}
+      <form onSubmit={formGet}>
         <div className="form text-center">
           <div className="mb-3">
             <label htmlFor="usernameControl" className="form-label">
