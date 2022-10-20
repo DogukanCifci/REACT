@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { FaReact } from "react-icons/fa";
 const Mousekeyboard = () => {
-  const [xEkseni, SetXekseni] = useState(0);
+  //https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageX
+  //!pageX ve pageY komutunu kullanırsanız, bulunduğunuz sayfanın sol üst köşesini 0-0 kabul eder, ona göre konum bildirir
+  const [xEkseni, SetXekseni] = useState(0); //Degisikliklerin direk ekrana yansimasini istedigimiz icin bunu kullanmaliyiz
   const [yEkseni, SetYekseni] = useState(0);
   const mouseOlayi = (e) => {
-    SetXekseni(e.pageX);
+    SetXekseni(e.pageX); //pageX ve pageY sabit e yi kendimiz verdik disardan bir parametre gelmesi lazim oldugu icin
     SetYekseni(e.pageY);
   };
   return (
