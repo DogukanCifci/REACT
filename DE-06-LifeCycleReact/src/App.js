@@ -4,6 +4,7 @@ import "./App.css";
 import Clock from "./component/Clock";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
+import ExampleUseEffect from "./component/ExampleUseEffect";
 function App() {
   const [goster, setGoster] = useState(true);
   // console.log(goster);
@@ -11,6 +12,8 @@ function App() {
     <div className="container text-center mt-3">
       {goster && <Clock />}
       {/* veya goster {goster ? <Clock /> : ""} --> Bu sekilde ternary ile de yapabiliriz */}
+
+      {goster && <ExampleUseEffect />}
       <button className="btn btn-danger" onClick={() => setGoster(!goster)}>
         Göster
       </button>
