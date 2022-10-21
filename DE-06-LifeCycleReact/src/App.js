@@ -12,7 +12,7 @@ function App() {
       {goster && <Clock />}
       {/* veya goster {goster ? <Clock /> : ""} --> Bu sekilde ternary ile de yapabiliriz */}
       <button className="btn btn-danger" onClick={() => setGoster(!goster)}>
-        Gönder
+        Göster
       </button>
     </div>
   );
