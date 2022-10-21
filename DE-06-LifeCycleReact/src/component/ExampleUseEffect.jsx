@@ -30,11 +30,30 @@ const ExampleUseEffect = () => {
   const [count, SetCount] = useState(0);
 
   //Count' u her artirrdigimda yilardaki useState'e gelecegi icin alttaki settimeoutda oraya her geldiginde otomatikmen 1 kere calisacak. setTimeOut'u bir kere yapip daha sonr aoraya bir daha gelse bile atlamasi icin useEffect icine aldik.Sadece sayfa yüklendiginde bir kere calisir. Daha sonra calismaz.
-  useEffect(() => {
+  /*  useEffect(() => {
     setTimeout(() => {
       alert("Merhaba Hosgeldin");
     }, 3000);
   }, []);
+ */
+
+  //Eger her degisiklik oldugunda useEffect ile degisikigin de gözükmesini istersek ;
+  /* useEffect(() => {
+    alert(count);
+  }, [count]); */
+
+  //! saniyede bir console a INTERVAL yazsın, count her değiştiğinde console da yeni sayı yazsın, component kapandığında da ınterval dursun.
+
+  useEffect(() => {
+    console.log(count);
+    const time = setInterval(() => {
+      console.log("Interval");
+    }, 1000);
+
+    return () => {
+      clearInterval(time);
+    };
+  }, [count]);
 
   const artir = () => {
     SetCount(count + 1);
