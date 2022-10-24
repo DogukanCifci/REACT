@@ -1,9 +1,11 @@
-import People from "./components/People";
+// import People from "./components/People";
 import "bootstrap/dist/css/bootstrap.min.css";
+import PeopleAxios from "./components/PeopleAxios";
 function App() {
   return (
     <div>
-      <People />
+      {/* <People /> */}
+      <PeopleAxios />
     </div>
   );
 }
