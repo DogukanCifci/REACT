@@ -20,11 +20,11 @@ const MyNavbar = () => {
             navbarScroll
           >
             <NavLink
-              style={({ isActive }) =>
-                isActive ? { color: "red" } : undefined
-              }
               className="nav-link"
               to="/"
+              style={({ isActive }) =>
+                isActive ? { color: "red", fontSize: "20px" } : undefined
+              }
             >
               Home
             </NavLink>
@@ -32,7 +32,7 @@ const MyNavbar = () => {
               className="nav-link"
               to="/teacher"
               style={({ isActive }) =>
-                isActive ? { color: "red" } : undefined
+                isActive ? { color: "red", fontSize: "20px" } : undefined
               }
             >
               Teacher
@@ -41,7 +41,7 @@ const MyNavbar = () => {
               className="nav-link"
               to="/courses"
               style={({ isActive }) =>
-                isActive ? { color: "red" } : undefined
+                isActive ? { color: "red", fontSize: "20px" } : undefined
               }
             >
               Courses
@@ -50,7 +50,7 @@ const MyNavbar = () => {
               className="nav-link"
               to="/contact"
               style={({ isActive }) =>
-                isActive ? { color: "red" } : undefined
+                isActive ? { color: "red", fontSize: "20px" } : undefined
               }
             >
               Contact

@@ -8,6 +8,8 @@ import ContactForm from "./pages/ContactForm";
 
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./pages/NotFound";
+
 const App = () => {
   return (
     //!!!Her zaman gelecek olanlar BrowserRouter altinda. Daha sonra tiklandiginda gelmesini istedigimiz componentler ise Routes kismi icerisinde. Yani cagirilan her bir componentte myNavbar ve Footer componentleri de gözüküyor olacak. Digerleri Cagirildikca gelir(Route ile cagiriyoruz.)
@@ -20,6 +22,7 @@ const App = () => {
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/courses" element={<CourseCard />} />
           <Route path="/teacher" element={<Teacher />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>
