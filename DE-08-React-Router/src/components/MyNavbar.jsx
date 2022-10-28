@@ -9,8 +9,7 @@ const MyNavbar = () => {
     <Navbar bg="light" expand="lg">
       <Container fluid>
         <Link to="/">
-          {" "}
-          <img src={logo} alt="" />{" "}
+          <img src={logo} alt="" />
         </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

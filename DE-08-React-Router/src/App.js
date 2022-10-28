@@ -9,6 +9,7 @@ import ContactForm from "./pages/ContactForm";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
+import TeacherDetails from "./pages/TeacherDetails";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/courses" element={<CourseCard />} />
           <Route path="/teacher" element={<Teacher />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/teacher/:id" element={<TeacherDetails />} />
         </Routes>
         <Footer />
       </BrowserRouter>
