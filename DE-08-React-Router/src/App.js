@@ -25,6 +25,7 @@ const App = () => {
           <Route path="/teacher" element={<Teacher />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/teacher/:id" element={<TeacherDetails />} />
+          {/* Burda gelene degisken icin :degiskenName kullaniyoruz */}
         </Routes>
         <Footer />
       </BrowserRouter>

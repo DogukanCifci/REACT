@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const Teacher = () => {
+  //<Link to="/teacher/${id}" yerine useNavigate kullanmamin sebebi <Link to="" methodu ${} böyle seyleri akbul etmiyor. Direk hazi olan bir sayfaya yönlendirebiliriz.Degisken kullanamiyoruz
   const navigate = useNavigate();
   const [insanlar, setInsan] = useState([]);
 
