@@ -1,19 +1,18 @@
 import React from "react";
 import { Button, Card, Row, Col, Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 import data from "../data";
 //!react-bootstrap ten CourseCard componenti
 
-
 const CourseCard = () => {
-  
+  const navigate = useNavigate();
   return (
-    <Container className="text-center mt-4 p-4" >
-     
-      <Row className="d-flex justify-content-center" >
-      {data.map((item) => {
-    const{id,name,img,text}=item;
-       return (
+    <Container className="text-center mt-4 p-4">
+      <Row className="d-flex justify-content-center">
+        {data.map((item) => {
+          const { id, name, img, text } = item;
+          return (
             <Col
               className="d-flex justify-content-center mb-4"
               sm={12}
@@ -26,11 +25,13 @@ const CourseCard = () => {
                 <Card.Body>
                   <Card.Title>{name}</Card.Title>
                   <Card.Text>{text}</Card.Text>
-                 
-                
-                
-                  <Button variant="info">Detail</Button>
 
+                  <Button
+                    variant="info"
+                    onClick={() => navigate(`/courses/${name}`)}
+                  >
+                    Details
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>

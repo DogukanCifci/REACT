@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import TeacherDetails from "./pages/TeacherDetails";
+import CardDetails from "./pages/CardDetails";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
           <Route path="/teacher/:id" element={<TeacherDetails />} />
           {/* Burda gelene degisken icin :degiskenName kullaniyoruz */}
+          <Route path="/courses/:name" element={<CardDetails />} />
         </Routes>
         <Footer />
       </BrowserRouter>
