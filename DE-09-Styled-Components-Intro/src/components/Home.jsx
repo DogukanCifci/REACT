@@ -10,6 +10,7 @@ const Home = () => {
       <HeaderStyle>Styled Component Dersine Hosgeldiniz</HeaderStyle>
       <ButtonStyle>Submit</ButtonStyle>
       <ButtonStyle>SUBMIT2</ButtonStyle>
+      <DomatesButton dogukan>Yanci Buton</DomatesButton>
       <DomatesButton>Yanci Buton</DomatesButton>
     </ContainerStyle>
   );
