@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const TextFieldComp = () => {
-  return (
-    <div>TextFieldComp</div>
-  )
-}
+  return <div></div>;
+};
 
-export default TextFieldComp
+export default TextFieldComp;

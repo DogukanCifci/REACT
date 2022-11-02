@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const CardsGrid = () => {
-  return (
-    <div>CardsGrid</div>
-  )
-}
+  return <div></div>;
+};
 
-export default CardsGrid
+export default CardsGrid;
