@@ -10,7 +10,7 @@ const CardSSS = styled.div`
   display: flex;
   flex-direction: ${({ ters }) => ters || "row"};
 
-  @media (max-width: 726px) {
+  @media (max-width: ${({ theme }) => theme.responsive}) {
     flex-wrap: wrap-reverse;
     text-align: center;
     justify-content: center;

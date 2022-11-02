@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const DisplaySSS = styled.div`
-  background-color: lightblue;
+  background-color: ${({ theme }) => theme.colors.header};
   display: flex;
   justify-content: space-between;
   align-items: center;

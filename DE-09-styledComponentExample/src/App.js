@@ -1,15 +1,23 @@
-import React from 'react'
-import Card from './components/Card'
-import Header from './components/Header'
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import Card from "./components/Card";
+import Header from "./components/Header";
+
+const style = {
+  colors: {
+    logo: "orange",
+    header: "lightblue",
+  },
+  responsive: "724px",
+};
 
 const App = () => {
   return (
-    <div>
+    <ThemeProvider theme={style}>
       <Header />
-
       <Card />
-    </div>
+    </ThemeProvider>
   );
-}
+};
 
-export default App
+export default App;
