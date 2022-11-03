@@ -23,12 +23,9 @@ const Home = () => {
 
   //! POST (Create)
   const postData = async (gelenVeri) => {
-    console.log(gelenVeri);
     await axios.post(url, gelenVeri);
     getBilgiler();
   };
-
-  postData();
 
   //! DELETE (delete)
   const deleteData = async (id) => {
@@ -39,10 +36,18 @@ const Home = () => {
 
   //! Update (PUT:tüm Update,PATCH :kısmen Update)
 
+  const putData = async (güncellenenVeri) => {
+    await axios.put(`${url}/${güncellenenVeri.id}`, güncellenenVeri);
+    getBilgiler();
+  };
   return (
     <>
       <AddBilgi postData={postData} />
-      <BilgiList deleteData={deleteData} bilgiler={bilgiler} />
+      <BilgiList
+        deleteData={deleteData}
+        bilgiler={bilgiler}
+        putData={putData}
+      />
     </>
   );
 };

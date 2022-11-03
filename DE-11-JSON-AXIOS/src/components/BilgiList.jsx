@@ -1,8 +1,10 @@
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import EditBilgi from "./EditBilgi";
+import { useState } from "react";
+const BilgiList = ({ bilgiler, deleteData, putData }) => {
+  const [items, setItems] = useState("");
 
-const BilgiList = ({ bilgiler, deleteData }) => {
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -26,10 +28,12 @@ const BilgiList = ({ bilgiler, deleteData }) => {
                 <td>{description}</td>
                 <td className="text-center text-nowrap">
                   <FaEdit
+                    //alttaki iki satur toggle ve targetbana tiklandiginda acil anlamina geliyor. Bootstrapten alinti
                     data-bs-toggle="modal"
                     data-bs-target="#edit-modal"
                     size={20}
                     className="me-2 text-warning cursor-pointer"
+                    onClick={() => setItems(a)}
                   />
                   <AiFillDelete
                     size={22}
@@ -43,7 +47,7 @@ const BilgiList = ({ bilgiler, deleteData }) => {
         </tbody>
       </table>
 
-      <EditBilgi />
+      <EditBilgi putData={putData} items={items} setItems={setItems} />
     </div>
   );
 };
