@@ -25,6 +25,7 @@ const Home = () => {
   const postData = async (gelenVeri) => {
     console.log(gelenVeri);
     await axios.post(url, gelenVeri);
+    getBilgiler();
   };
 
   postData();

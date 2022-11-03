@@ -4,7 +4,8 @@ const AddBilgi = ({ postData }) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault();
     postData({ title: title, description: desc });
     console.log(title, desc);
   };
