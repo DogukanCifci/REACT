@@ -29,14 +29,20 @@ const Home = () => {
   };
 
   postData();
+
   //! DELETE (delete)
+  const deleteData = async (id) => {
+    console.log("a", id);
+    await axios.delete(`${url}/${id}`);
+    getBilgiler();
+  };
 
   //! Update (PUT:tüm Update,PATCH :kısmen Update)
 
   return (
     <>
       <AddBilgi postData={postData} />
-      <BilgiList bilgiler={bilgiler} />
+      <BilgiList deleteData={deleteData} bilgiler={bilgiler} />
     </>
   );
 };

@@ -2,7 +2,7 @@ import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import EditBilgi from "./EditBilgi";
 
-const BilgiList = ({ bilgiler }) => {
+const BilgiList = ({ bilgiler, deleteData }) => {
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -34,6 +34,7 @@ const BilgiList = ({ bilgiler }) => {
                   <AiFillDelete
                     size={22}
                     className="text-danger cursor-pointer"
+                    onClick={() => deleteData(id)}
                   />
                 </td>
               </tr>
