@@ -12,9 +12,13 @@ import {
 import React from "react";
 import MyData from "../data.js";
 const CardsGrid = () => {
+  //Grid container ----> row
+  //Grid item ----->col
   return (
     <Container sx={{ mt: 5 }}>
-      <Typography>UI Material CARD - GRID</Typography>
+      <Typography variant="h4" align="center" sx={{ mb: 2 }} color="purple">
+        UI Material CARD - GRID
+      </Typography>
       <Grid container spacing={10} alignItems="center" justifyContent="center">
         {MyData.map((e) => {
           const { id, name, text, img } = e;
@@ -22,12 +26,7 @@ const CardsGrid = () => {
             <Grid item key={id}>
               <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image={img}
-                    alt="green iguana"
-                  />
+                  <CardMedia component="img" image={img} height={250} />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       {name}
