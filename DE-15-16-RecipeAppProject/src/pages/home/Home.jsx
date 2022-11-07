@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { HomeImg, ImgDiv } from "./HomeStyles";
+import { HomeImg, ImgDiv, MainContainer } from "./HomeStyles";
 import Header from "../../components/header/Header";
 import HomeSvg from "../../assets/home.svg";
 import axios from "axios";
+import RecipeCard from "./RecipeCard";
 const Home = () => {
   //Degiskenlerin Tanimlandigi Kisim ////
   const [query, setQuery] = useState("");
@@ -22,13 +23,21 @@ const Home = () => {
     const veri = await axios.get(url);
     setYemekler(veri.data.hits);
   };
-
+  console.log(yemekler);
   return (
     <div>
-      <Header getData={getData} />
-      <ImgDiv>
-        <HomeImg src={HomeSvg} />
-      </ImgDiv>
+      <Header getData={getData} setQuery={setQuery} setOgun={setOgun} />
+      {yemekler.length > 0 ? (
+        <MainContainer>
+          {yemekler.map((element, index) => (
+            <RecipeCard key={index} element={element} />
+          ))}
+        </MainContainer>
+      ) : (
+        <ImgDiv>
+          <HomeImg src={HomeSvg} />
+        </ImgDiv>
+      )}
     </div>
   );
 };

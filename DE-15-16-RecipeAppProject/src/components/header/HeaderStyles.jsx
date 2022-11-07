@@ -28,7 +28,7 @@ export const FormContainer = styled.form`
   border: 2px solid white;
   border-radius: 3px;
   margin: 20px;
-  background-color:blue;
+  background-color: blue;
 `;
 
 export const FoodInput = styled.input`
