@@ -7,14 +7,17 @@ const Navbar = () => {
   console.log(hamburgerCheck);
   return (
     <Nav>
-      <Logo to="/home">
+      <Logo to="/home" onClick={() => setHamburgerCheck(false)}>
         <i>{"<Clarusway>  "}</i>
         <span>RECIPE</span>
       </Logo>
       <Hamburger onClick={() => setHamburgerCheck(!hamburgerCheck)}>
         <GiHamburgerMenu />
       </Hamburger>
-      <Menu hamburgerCheck={hamburgerCheck}>
+      <Menu
+        hamburgerCheck={hamburgerCheck}
+        onClick={() => setHamburgerCheck(!hamburgerCheck)}
+      >
         <MenuLink to="/about">About</MenuLink>
         <a href="https://github.com/DogukanCifci" target="blank">
           Github
