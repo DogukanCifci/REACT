@@ -1,15 +1,20 @@
-import React from "react";
-import { Logo, Menu, MenuLink, Nav } from "./NavbarStyles";
+import { GiHamburgerMenu } from "react-icons/gi";
+import React, { useState } from "react";
+import { Hamburger, Logo, Menu, MenuLink, Nav } from "./NavbarStyles";
 
 const Navbar = () => {
+  const [hamburgerCheck, setHamburgerCheck] = useState(false);
+  console.log(hamburgerCheck);
   return (
     <Nav>
       <Logo to="/home">
         <i>{"<Clarusway>  "}</i>
         <span>RECIPE</span>
       </Logo>
-
-      <Menu>
+      <Hamburger onClick={() => setHamburgerCheck(!hamburgerCheck)}>
+        <GiHamburgerMenu />
+      </Hamburger>
+      <Menu hamburgerCheck={hamburgerCheck}>
         <MenuLink to="/about">About</MenuLink>
         <a href="https://github.com/DogukanCifci" target="blank">
           Github
