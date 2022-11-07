@@ -63,7 +63,7 @@ export const Menu = styled.div`
     /* 3 çizgiye ilk tıklandığında 300 px açılsın, sonraki tıklamada kapansın */
     /* max-height:300px yazarsak hep açık olur */
   }
-  
+
   a {
     padding: 1rem 2rem;
     cursor: pointer;
@@ -110,12 +110,10 @@ export const Logo = styled(Link)`
 export const Hamburger = styled.div`
   display: none;
   /* Bir öğeyi gizleme özelliği  Öğe gizlenecek ve sayfa, öğe orada değilmiş gibi alttaki stiller yok gibi görüntülenecektir: hamburger ekran büyükken görünmesin 768 den küçülmeye başlayınca görünsün*/
-  
+
   cursor: pointer;
-  
-@media (max-width: 768px) {
-display: flex;
 
-}
-
+  @media (max-width: 768px) {
+    display: flex;
+  }
 `;

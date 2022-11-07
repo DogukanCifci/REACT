@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import { Logo, Menu, MenuLink, Nav } from "./NavbarStyles";
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <Nav>
+      <Logo to="/home">
+        <i>{"<Clarusway>  "}</i>
+        <span>RECIPE</span>
+      </Logo>
 
-export default Navbar
+      <Menu>
+        <MenuLink to="/about">About</MenuLink>
+        <a href="https://github.com/DogukanCifci" target="blank">
+          Github
+        </a>
+        <MenuLink to="/">LOGOUT</MenuLink>
+      </Menu>
+    </Nav>
+  );
+};
+
+export default Navbar;
