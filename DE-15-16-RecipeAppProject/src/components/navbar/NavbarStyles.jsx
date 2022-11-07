@@ -49,19 +49,25 @@ export const Menu = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  transition: all 1s ease-in-out;
   /* içinde bulunduğu div in  stillerine göre ayarla kendini, bunu yazmazsak food app in altında kalacak */
   /* 3 kelime  açılınca üstteki özelliklerde olsun*/
   @media (max-width: 768px) {
-    overflow: hidden;
+    //overflow: hidden;
     /* display: none; tamamen gizler, hamburger tıklanınca bile açılmaz */
     /* uzun yazı olurda taşarsa gizle (hamburgere dönüşünce)*/
     flex-direction: column;
     width: 100%;
     /* props olarak, osman=true geldi mesela */
-    max-height: ${({ hamburgerCheck }) => (hamburgerCheck ? "300px" : "0")};
+    //alttaki overflow:hidden icin
+    // max-height: ${({ hamburgerCheck }) => (hamburgerCheck ? "300px" : "0")};
+    /* background-color: ${({ hamburgerCheck }) =>
+      hamburgerCheck ? "red" : "false"}; */
     //max-height: 300px;
     /* 3 çizgiye ilk tıklandığında 300 px açılsın, sonraki tıklamada kapansın */
     /* max-height:300px yazarsak hep açık olur */
+    height: 300px;
+    display: ${({ hamburgerCheck }) => (hamburgerCheck ? "flex" : "none")};
   }
 
   a {
