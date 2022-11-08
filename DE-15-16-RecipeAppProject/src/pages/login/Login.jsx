@@ -15,7 +15,12 @@ const Login = () => {
   const [name, setName] = useState("");
   const [pass, setPass] = useState("");
   const navigate = useNavigate();
-  const backendYolla = () => {
+
+  const backendYolla = (e) => {
+    e.preventDefault();
+    //Fake Backend yaptigim icin ilk etapta elimle name ve pass belirledim
+    localStorage.set("user", JSON.stringify(name));
+    localStorage.set("userPassword", JSON.stringify(pass));
     navigate("/home");
   };
   return (
