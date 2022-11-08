@@ -57,8 +57,7 @@ export const StyledForm = styled.form`
 `;
 
 export const StyledButton = styled.button`
-
-/* login butonu */
+  /* login butonu */
   font-size: 2rem;
   font-family: "Girassol", sans-serif;
   background-color: rgba(0, 0, 0, 0.6);

@@ -5,6 +5,8 @@ import Footer from "../components/footer/Footer";
 import Home from "../pages/home/Home";
 import About from "../pages/about/About";
 import Login from "../pages/login/Login";
+import Details from "../pages/details/Details";
+
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -13,13 +15,10 @@ const AppRouter = () => {
         <Route path="/" element={<Login />} />
 
         <Route path="/home" element={<Home />} />
-       
 
-        <Route path="/about" element=
-          {<About />} />
-      
+        <Route path="/about" element={<About />} />
 
-      
+        <Route path="/details" element={<Details />} />
       </Routes>
       <Footer />
     </BrowserRouter>
@@ -27,4 +26,3 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
-

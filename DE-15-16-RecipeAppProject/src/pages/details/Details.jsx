@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   DetailContainer,
   DetailPart,
@@ -8,17 +8,15 @@ import {
   OtherPart,
 } from "./DetailsStyles";
 import dietSvg from "../../assets/diet.svg";
-import {useLocation} from "react-router-dom"
+import { useLocation } from "react-router-dom";
 const Details = () => {
-  
-const location = useLocation();
-//! useLocation= useNavigate in kardeşidir, navigate in state ine yüklenen veriyi navigate in yönlendirdiği sayfada karşılar
-// navigate("/details", { state: { recipe1 } });
-const recipe= location.state.recipe1
-
-console.log(recipe);
+  const location = useLocation();
+  //! useLocation= useNavigate in kardeşidir, navigate in state ine yüklenen veriyi navigate in yönlendirdiği sayfada karşılar
+  // navigate("/details", { state: { recipe1 } });
+  const item = location.state.element;
+  console.log(item);
+  const recipe = item.recipe;
   return (
-   
     <DetailContainer>
       <HeaderContainer>
         <h1> {recipe.label}</h1>
@@ -63,7 +61,7 @@ console.log(recipe);
           {recipe.ingredientLines.map((item, indeks) => (
             <div key={indeks}>
               <p>
-                {indeks + 1 } * {item}
+                {indeks + 1} * {item}
                 {/* ingredientLines içinde bir sürü obje var tek tek yazdır, başına no ekle 1*{malzeme} gibi */}
               </p>
             </div>
@@ -72,6 +70,6 @@ console.log(recipe);
       </DetailPart>
     </DetailContainer>
   );
-}
+};
 
-export default Details
+export default Details;

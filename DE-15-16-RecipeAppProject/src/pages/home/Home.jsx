@@ -20,8 +20,13 @@ const Home = () => {
 
   // =========== VERI CEKME KISMI ========
   const getData = async () => {
-    const veri = await axios.get(url);
-    setYemekler(veri.data.hits);
+    if (query === "") {
+      alert("Yemek ismi giriniz!");
+      return;
+    } else {
+      const veri = await axios.get(url);
+      setYemekler(veri.data.hits);
+    }
   };
   console.log(yemekler);
   return (

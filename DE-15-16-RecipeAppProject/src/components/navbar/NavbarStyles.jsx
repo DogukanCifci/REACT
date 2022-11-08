@@ -19,14 +19,12 @@ export const Nav = styled.div`
 export const MenuLink = styled(Link)`
   /* navbardaki 3 kelime ... tek tek about vs yazanların özellikleri YEŞİL*/
   background-color: green;
-
   padding: 1rem 2rem;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   /* kelimelerin altı çizili olmasın */
   color: #02475e;
-
   transition: all 0.3s ease-in;
   font-size: 2rem;
   font-family: "Girassol", sans-serif;
