@@ -10,12 +10,16 @@ const App = () => {
 
   console.table(ogrenci);
 
-  const renkDegistir = () => {
-    //dizideki renkleri degistirme fonksiyonunu burada yapacagiz.
+  const renkDegistir = (id, myNewColor) => {
+    setOgrenci(
+      ogrenci.map((element) =>
+        element.id === id ? { ...element, color: myNewColor } : element
+      )
+    );
   };
 
   return (
-    <OgrenciContext.Provider value={{ ogrenci, setOgrenci, renkDegistir }}>
+    <OgrenciContext.Provider value={{ ogrenci, renkDegistir }}>
       <Home />
     </OgrenciContext.Provider>
   );
