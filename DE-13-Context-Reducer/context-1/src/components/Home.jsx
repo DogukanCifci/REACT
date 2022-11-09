@@ -1,5 +1,5 @@
-import React from 'react'
-import OgrenciList from "./OgrenciList"
+import React from "react";
+import OgrenciList from "./OgrenciList";
 const Home = () => {
   return (
     <div>
@@ -7,6 +7,6 @@ const Home = () => {
       <OgrenciList />
     </div>
   );
-}
+};
 
-export default Home
+export default Home;

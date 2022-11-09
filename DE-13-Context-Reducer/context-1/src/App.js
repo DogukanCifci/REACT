@@ -1,8 +1,9 @@
 import React, { createContext, useState } from "react";
+import Home from "./components/Home";
 import data from "./data";
 
 //Ogrenci objecti ve fonksiyon icin context olusturuyoruz ve disraidan alt componentlerin kullanimina aciyoruz.
-export const OgrenciContext = createContext;
+export const OgrenciContext = createContext();
 
 const App = () => {
   const [ogrenci, setOgrenci] = useState(data);
@@ -13,7 +14,11 @@ const App = () => {
     //dizideki renkleri degistirme fonksiyonunu burada yapacagiz.
   };
 
-  return <div>App</div>;
+  return (
+    <OgrenciContext.Provider value={{ ogrenci, setOgrenci, renkDegistir }}>
+      <Home />
+    </OgrenciContext.Provider>
+  );
 };
 
 export default App;
