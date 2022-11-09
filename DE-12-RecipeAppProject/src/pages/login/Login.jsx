@@ -19,8 +19,8 @@ const Login = () => {
   const backendYolla = (e) => {
     e.preventDefault();
     //Fake Backend yaptigim icin ilk etapta elimle name ve pass belirledim
-    localStorage.set("user", JSON.stringify(name));
-    localStorage.set("userPassword", JSON.stringify(pass));
+    localStorage.setItem("user", JSON.stringify(name));
+    localStorage.setItem("userPassword", JSON.stringify(pass));
     navigate("/home");
   };
   return (
