@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ContainerContext } from "../App";
 
-//Normalde kullaniciyi da dededen alabilirdim ama bababa bunu kullandigim icin göstermek adina hem props olarak hem de dededen de useContext kullanarak almis olduk.
+//Normalde kullaniciyi da dededen alabilirdim ama baba da bunu kullandigim icin göstermek adina hem props olarak hem de dededen de useContext kullanarak almis olduk.
 const AnaUser = ({ kullanici }) => {
   const { changeDivision } = useContext(ContainerContext);
   return (
