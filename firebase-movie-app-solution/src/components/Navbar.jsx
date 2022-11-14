@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import avatar from "../assets/icons/avatar.png";
+import { logOut } from "../auth/firebase";
+import AuthContextProvider, {
+  AuthContext,
+} from "../context/AuthContextProvider";
 
 const Navbar = () => {
-  const currentUser = { displayName: "felix franko" };
+  const { currentUser } = useContext(AuthContext);
+
+  //const currentUser = { displayName: "felix franko" };
   return (
     <>
       <nav className="w-full flex flex-wrap items-center justify-between py-3 bg-gray-900 text-white shadow-lg navbar navbar-expand-lg fixed-top">
@@ -15,7 +21,7 @@ const Navbar = () => {
           <div className="flex items-center relative">
             {/* Icon */}
             {currentUser && (
-              <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
+              <h5 className="mr-2 capitalize">{currentUser.displayName}</h5>
             )}
             <div className="dropdown relative">
               <span
@@ -31,6 +37,8 @@ const Navbar = () => {
                   style={{ height: 25, width: 25 }}
                   alt=""
                   loading="lazy"
+                  referrerPolicy="no-referrer"
+                  //Resimi cekerken sikinti olabiliyor. O sikintiyi gidermek icin kullaniliyor
                 />
               </span>
               <ul
@@ -58,6 +66,7 @@ const Navbar = () => {
                     className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
                     href="#"
                     role="button"
+                    onClick={() => logOut()}
                   >
                     Logout
                   </span>

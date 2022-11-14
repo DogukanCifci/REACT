@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import GoogleIcon from "../assets/icons/GoogleIcon";
-
+import { createUser, signInWithGoogle } from "../auth/firebase";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
+    const displayName = `${firstName} ${lastName}`;
     console.log(email, password);
+    createUser(email, password, navigate, displayName);
+    navigate("/");
+    console.log(firstName, lastName);
   };
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">
@@ -83,6 +88,7 @@ const Register = () => {
           <button
             className="flex justify-between border-none outline-none bg-[#ff4b45] custom-input w-[300px] mt-[15px] rounded-[4px] font-[600] cursor-pointer"
             type="button"
+            onClick={() => signInWithGoogle(navigate)}
           >
             Continue with Google
             <GoogleIcon color="currentColor" />
