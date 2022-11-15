@@ -19,7 +19,14 @@ const MovieCard = ({ movie }) => {
     }
   };
   return (
-    <div className="movie" onClick={() => navigate("/details/" + id)}>
+    <div
+      className="movie"
+      onClick={() =>
+        !currentUser
+          ? alert("You have to login firstly")
+          : navigate("/details/" + id)
+      }
+    >
       <img
         loading="lazy"
         //Bazne fotograflarin poster_path i olmayabiliyor. Olmadigi durumda bir tane default fotograf gözüksün diye defaultImage ekledik.

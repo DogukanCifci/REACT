@@ -14,7 +14,16 @@ const MovieDetail = () => {
     "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80";
 
   const videoUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`;
-  useEffect(() => {}, []);
+  useEffect(() => {
+    axios
+      .get(movieDetailBaseUrl)
+      .then((res) => setDetailsMovie(res.data))
+      .catch((err) => console.log(err));
+    axios
+      .get(videoUrl)
+      .then((res) => setVideoKey(res.data.results[0].key))
+      .catch((err) => console.log(err));
+  }, []);
   console.log(detailsMovie);
   console.log("KEY", videoKey);
   const {
