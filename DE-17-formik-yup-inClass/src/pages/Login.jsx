@@ -6,9 +6,11 @@ import Typography from "@mui/material/Typography";
 import LockIcon from "@mui/icons-material/Lock";
 import image from "../assets/result.svg";
 import { Link, useNavigate } from "react-router-dom";
-
+import { Form, Formik } from "formik";
 import { useSelector } from "react-redux";
+import { TextField } from "@mui/material";
 
+const loginScheme = {};
 const Login = () => {
   const navigate = useNavigate();
   const { currentUser, error } = useSelector((state) => state?.auth);
@@ -49,6 +51,50 @@ const Login = () => {
           >
             Login
           </Typography>
+
+          <Formik
+            initialValues={{ email: "", password: "" }}
+            validationSchema={loginScheme}
+            onSubmit={(values, actions) => {
+              //login(values)
+              actions.resetForm();
+              actions.setSubmitting(false);
+            }}
+          >
+            {({
+              values,
+              isSubmitting,
+              handleChange,
+              handleBlur,
+              errors,
+              handleSubmit,
+              touched,
+            }) => {
+              return (
+                <Form>
+                  <Box>
+                    <TextField
+                      label="Email"
+                      name="email"
+                      id="email"
+                      type="email"
+                      variant="outlined"
+                      value={values.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={touched.email && Boolean(errors.email)}
+                      helperText={touched.email && errors?.email}
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "2",
+                      }}
+                    />
+                  </Box>
+                </Form>
+              );
+            }}
+          </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2 }}>
             <Link to="/register">Do you have not an account?</Link>
