@@ -1,18 +1,14 @@
-import React from 'react';
-import okLogo from '../../assets/ok.png';
-import deleteLogo from '../../assets/delete.png';
+import React from "react";
+import okLogo from "../../assets/ok.png";
+import deleteLogo from "../../assets/delete.png";
 
-const TodoItem = () => {
-
-
+const TodoItem = ({ item }) => {
   return (
     <div
       style={{ backgroundColor: "orange", borderRadius: "5px" }}
       className="todo-list"
     >
-      <h2 className="todoText">
-        
-      </h2>
+      <h2 className="todoText">{item.text}</h2>
       <div>
         <span>
           <img src={okLogo} className="ok-logo" alt="ok logo" />
