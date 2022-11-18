@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const UseRefComponent = () => {
   //UseRef iki adet kullanimi var.
@@ -24,10 +24,17 @@ const UseRefComponent = () => {
   };
   //=========
 
+  //React autoFocus yapmak yerine js kocu ile autofoucs yapmak istersem  useEffect kullanmaliyim ya da bir fonksiyon icinde yazmaliyim. Cünkü sayfa calisirken kod yukardan asagiya dogru gelecegi icin, useEffect olmadan inputRef.current.focus(); yazarsak daha input olusmadan focus olmaya calisir yani hata verir.
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  //======
+
   return (
     <div ref={divRef} className="useref">
       <h2>UseRef Component </h2>
-      <input ref={inputRef} type="text" placeholder="Enter text..." />
+      <input autoFocus ref={inputRef} type="text" placeholder="Enter text..." />
       <button onClick={renkDegistir}>ChangeBGColor</button>
       <button onClick={artir}>increase Value</button>
     </div>
