@@ -1,17 +1,16 @@
-import React from 'react';
-import UserItem from './UserItem';
+import React, { memo } from "react";
+import UserItem from "./UserItem";
 
-const Users = ({users}) => {
-  console.log('USERS COMPONENT RENDERED');
+const Users = ({ kullanicilar }) => {
+  console.log("USERS COMPONENT RENDERED");
 
   return (
     <div className="users">
-      
-      {users?.map((user) => (
+      {kullanicilar?.map((user) => (
         <UserItem key={user.id} user={user} />
       ))}
     </div>
   );
 };
 
-export default Users;
+export default memo(Users);

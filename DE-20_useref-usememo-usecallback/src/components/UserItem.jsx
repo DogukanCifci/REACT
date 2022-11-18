@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from "react";
 
 const UserItem = ({ user }) => {
-  console.log('USERITEM COMPONENT RENDERED');
+  console.log("USERITEM COMPONENT RENDERED");
   return (
     <div className="useritem">
       <img
@@ -13,4 +13,4 @@ const UserItem = ({ user }) => {
   );
 };
 
-export default UserItem;
+export default memo(UserItem);
